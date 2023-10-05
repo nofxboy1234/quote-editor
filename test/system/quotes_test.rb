@@ -2,7 +2,8 @@ require 'application_system_test_case'
 
 class QuotesTest < ApplicationSystemTestCase
   setup do
-    @quote = quotes(:first) # Reference to the first fixture quote
+    # @quote = quotes(:first) # Reference to the first fixture quote
+    @quote = Quote.ordered.first
   end
 
   # test "visiting the index" do
