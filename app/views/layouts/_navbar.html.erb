@@ -6,7 +6,7 @@
     <div class='navbar__name'>
       Current user name
     </div>
-    <%= button_to 'Sign out'
+    <%= button_to 'Sign out',
                   destroy_user_session_path,
                   method: :delete,
                   class: 'btn btn--dark' %>
