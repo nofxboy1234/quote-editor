@@ -3,5 +3,5 @@ class Quote < ApplicationRecord
 
   scope :ordered, -> { order(id: :desc) }
 
-  after_create_commit -> { broadcast_prepend_to 'quotes' }
+  after_create_commit -> { puts '**** after_create_commit ****'; broadcast_prepend_to 'quotes' }
 end
