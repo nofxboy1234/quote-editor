@@ -22,7 +22,9 @@ class QuotesController < ApplicationController
           puts '**** format.html ****'
           redirect_to quotes_path, notice: 'Quote was successfully created.'
         end
-        format.turbo_stream
+        format.turbo_stream do
+          flash.now[:notice] = 'Quote was successfully created.'
+        end
       end
     else
       render :new, status: :unprocessable_entity
