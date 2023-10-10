@@ -7,12 +7,6 @@ class QuotesTest < ApplicationSystemTestCase
     @quote = Quote.ordered.first
   end
 
-  # test "visiting the index" do
-  #   visit quotes_url
-  #
-  #   assert_selector "h1", text: "Quotes"
-  # end
-
   test 'Showing a quote' do
     visit quotes_path
     click_link @quote.name
