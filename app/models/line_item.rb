@@ -12,5 +12,6 @@ class LineItem < ApplicationRecord
   # line_item.quote
   delegate :quote, to: :line_item_date
 
+  # default_scope { order(name: :asc) }
   scope :ordered, -> { order(name: :asc) }
 end

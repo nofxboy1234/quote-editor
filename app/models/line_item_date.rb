@@ -4,7 +4,8 @@ class LineItemDate < ApplicationRecord
 
   validates :date, presence: true, uniqueness: { scope: :quote_id }
 
-  scope :ordered, -> { order(date: :asc) }
+  scope :ordered, -> { order(date: :desc) }
+  scope :with_ordered_line_items, -> { includes(:line_items).order('line_items.name' => :asc) }
 
   def previous_date
     quote.line_item_dates.ordered.where('date < ?', date).last
