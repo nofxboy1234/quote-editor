@@ -7,8 +7,8 @@ class QuotesController < ApplicationController
   end
 
   def show
-    # @line_item_dates = @quote.line_item_dates.includes(:line_items).ordered
-    @line_item_dates = @quote.line_item_dates.with_ordered_line_items.ordered
+    @line_item_dates = @quote.line_item_dates.includes(:line_items_ordered).ordered
+    # @line_item_dates = @quote.line_item_dates.with_ordered_line_items.ordered
   end
 
   def new
