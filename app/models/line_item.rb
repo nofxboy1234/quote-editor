@@ -14,4 +14,8 @@ class LineItem < ApplicationRecord
 
   # default_scope { order(name: :asc) }
   scope :ordered, -> { order(name: :asc) }
+
+  def total_price
+    quantity * unit_price
+  end
 end
