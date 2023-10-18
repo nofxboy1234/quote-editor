@@ -6,6 +6,6 @@ class MessagesController < ApplicationController
 
     RoomChannel.broadcast_to(@room, @message) # if using stream_for in room_channel.rb
     # RoomChannel.broadcast_to(@room, name: 'Kevin', dork_status: 'Ultimate')
-    ActionCable.server.broadcast('message', @message) # if using stream_from in room_channel.rb
+    ActionCable.server.broadcast("room_#{params[:room]}", @message) # if using stream_from in room_channel.rb
   end
 end

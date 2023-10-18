@@ -16,4 +16,9 @@ class RoomChannel < ApplicationCable::Channel
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
   end
+
+  def receive(data)
+    # Rebroadcast a message sent by one client to any other connected clients
+    ActionCable.server.broadcast("room_#{params[:room]}", data)
+  end
 end
