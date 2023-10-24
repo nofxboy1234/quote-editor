@@ -17,7 +17,7 @@
                         form: { data: { turbo_confirm: 'Are you sure?' } },
                         class: 'btn btn--light' %>
           <%= link_to 'Edit',
-                      [:edit, quote, line_item_date],
+                      edit_polymorphic_path([quote, line_item_date], dog: 'pluto'),
                       class: 'btn btn--light' %>
         </div>
       </div>
